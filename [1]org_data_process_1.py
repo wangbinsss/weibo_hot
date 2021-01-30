@@ -1,20 +1,22 @@
 # coding:utf-8
 # 此处为原始数据处理，第一种处理方式，将抓到的微博热搜数据每天每条热搜选取一条微博，存到data目录下的data.csv中
-# 默认使用了这种方式
+# 默认使用了这种方式，其他两种方式参见org_data_process_2、org_data_process_3
 
 import datetime
 
-# 开始日期
-start_date = datetime.datetime.strptime('2021-01-14', '%Y-%m-%d')
-days = 17   # 有多少天
+# 开始日期 和 结束日期
+start_day = '2021-01-14'
+end_day = '2021-01-30'
+
 
 title_path = './HotData/HotTitle/{day}HotTitle.txt'
 txt_path = './HotData/HotContent/{day}HotContent.txt'
 csv_path = './data/data.csv'
-
 with open(csv_path, 'w+', -1) as c_f:  # a+为追加写入，w+为覆盖写入
     c_f.write('content\n')
-
+start_date = datetime.datetime.strptime(start_day, '%Y-%m-%d')
+end_date = datetime.datetime.strptime(end_day, '%Y-%m-%d')
+days = (end_date - start_date).days
 for i in range(0, days):
     title_list = []
     the_day = start_date + datetime.timedelta(days=i)

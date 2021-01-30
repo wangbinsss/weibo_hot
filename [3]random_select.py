@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# 此处从聚类完成的cluster_data中按比例随机选取数据，存到selected_data中
+# 此处从聚类完成的数据cluster_data.txt中按比例随机选取数据，存到selected_data.txt中
 import random
 
 cluster_data_path = './data/cluster_data.txt'
