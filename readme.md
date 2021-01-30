@@ -7,4 +7,4 @@
     
     3.运行[2]k-means.py，将数据聚类，
     
-    4.运行[3]random_select.py，在聚类后的数据中随机选取数据
+    4.运行[3]random_select.py，在聚类后的数据中随机选取数据，最终挑选出来的数据在selected_data.txt中

@@ -4,6 +4,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from dict.normalization import normalize_corpus
 
 topn_features = 10  # 几个特征词
 K = 10  # k=10，聚出10个类别
@@ -42,7 +43,7 @@ book_content = book_data['content'].tolist()
 # print('内容:', book_content[0][:10])  # 内容前10个字
 
 # 第二步：数据载入、分词
-from normalization import normalize_corpus
+# from dict/normalization import normalize_corpus
 
 # normalize corpus
 norm_book_content = normalize_corpus(book_content)  # 返回的是分词后的集合['现代人 内心 流失 的 东西……','在 第一次世界大战 的……'，……]
