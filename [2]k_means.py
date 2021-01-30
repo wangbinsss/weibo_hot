@@ -5,10 +5,11 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
-topn_features = 10   # 几个特征词
+topn_features = 10  # 几个特征词
 K = 10  # k=10,聚出10个类别
 data_path = './data/data.csv'
 cluster_data_path = './data/cluster_data.txt'
+
 
 def build_feature_matrix(documents, feature_type='frequency',
                          ngram_range=(1, 1), min_df=0.0, max_df=1.0):
