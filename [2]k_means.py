@@ -1,13 +1,14 @@
 # -*- coding: UTF-8 -*-
 # 此处对data/data.csv执行k-means聚合算法，生成的数据存入data/cluster_data.txt
+
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-data_path = './data/data.csv'
-cluster_data_path = './data/cluster_data.txt'
+
 topn_features = 10   # 几个特征词
 K = 10  # k=10,聚出10个类别
-
+data_path = './data/data.csv'
+cluster_data_path = './data/cluster_data.txt'
 
 def build_feature_matrix(documents, feature_type='frequency',
                          ngram_range=(1, 1), min_df=0.0, max_df=1.0):
@@ -32,14 +33,11 @@ def build_feature_matrix(documents, feature_type='frequency',
 # 第一步：读取数据
 book_data = pd.read_csv(data_path)  # 读取文件
 # ,sep=",",error_bad_lines=False,engine='python',encoding='utf-8'
-print(book_data.head())  # 2822 rows x 5 columns
-# print("csv数据",os.linesep,book_data)
+# print(book_data.head())  # 2822 rows x 5 columns
 
-# book_titles = book_data['title'].tolist()
 book_content = book_data['content'].tolist()
 
-# print('书名:', book_titles[0])
-print('内容:', book_content[0][:10])  # 内容前10个字
+# print('内容:', book_content[0][:10])  # 内容前10个字
 
 # 第二步：数据载入、分词
 from normalization import normalize_corpus
@@ -134,7 +132,8 @@ def print_cluster_data(cluster_data):
             f.write('Key features:{0}'.format(cluster_details['key_features']) + '\n')
             print('content in this cluster:')
             f.write('content in this cluster:' + '\n')
-            print(', '.join(cluster_details['books']))
+            f.write('=' * 40 + '\n')
+            print(cluster_details['books'][0])
             for val in cluster_details['books']:
                 f.write(val + '\n')
             print('=' * 40)

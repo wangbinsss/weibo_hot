@@ -46,7 +46,7 @@ def data_processing(r):
 # 热搜列表存储路径
 def build_data_path():
     time_name = time.strftime('%Y%m%dHotTitle', time.localtime())
-    all_path = "./HotData"
+    all_path = "./HotData/HotTitle"
     if not os.path.exists(all_path):
         # 创建多层路径
         os.makedirs(all_path)
@@ -87,7 +87,7 @@ def detail_processing(r=None):
 # 热搜详情存储路径
 def build_detail_path():
     time_name = time.strftime('%Y%m%dHotContent', time.localtime())
-    all_path = "./HotData"
+    all_path = "./HotData/HotContent"
     if not os.path.exists(all_path):
         # 创建多层路径
         os.makedirs(all_path)
