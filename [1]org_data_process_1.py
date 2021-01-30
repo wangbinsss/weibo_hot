@@ -16,7 +16,8 @@ with open(csv_path, 'w+', -1) as c_f:  # a+为追加写入，w+为覆盖写入
     c_f.write('content\n')
 start_date = datetime.datetime.strptime(start_day, '%Y-%m-%d')
 end_date = datetime.datetime.strptime(end_day, '%Y-%m-%d')
-days = (end_date - start_date).days
+days = (end_date - start_date).days + 1
+print(days)
 for i in range(0, days):
     title_list = []
     the_day = start_date + datetime.timedelta(days=i)
