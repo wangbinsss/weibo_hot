@@ -22,7 +22,7 @@ for j in range(len(eq_list)):
         num = length//5
         # print('--', num)
         for n in range(num):
-            random_nums = random.randint(eq_list[j] + 1, eq_list[j + 1])
+            random_nums = random.randint(eq_list[j] + 1, eq_list[j + 1] - 1)
             while random_nums in ran_num_list:
                 random_nums = random.randint(eq_list[j] + 1, eq_list[j + 1] - 1)
             ran_num_list.append(random_nums)
