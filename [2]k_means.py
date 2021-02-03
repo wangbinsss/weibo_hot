@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-# 此处对data/data.csv执行k-means聚合算法，生成的数据存入data/cluster_data.txt
+# 此处对org_data_path执行k-means聚合算法，生成的数据存入cluster_data_path
 
 import pandas as pd
 import numpy as np
@@ -13,8 +13,8 @@ F = 8  # 几个特征词
 
 def k_means_main(num_clusters, features):
     # num_clusters: 聚类组数，features：特征词数
-    data_path = './data/data.csv'
-    cluster_data_path = './data/cluster_data.txt'
+    org_data_path = './data/[1]org_data.csv'
+    cluster_data_path = './data/[2]cluster_data.txt'
 
     def build_feature_matrix(documents, feature_type='frequency',
                              ngram_range=(1, 1), min_df=0.0, max_df=1.0):
@@ -36,7 +36,7 @@ def k_means_main(num_clusters, features):
         return vectorizer, feature_matrix
 
     # 第一步：读取数据
-    book_data = pd.read_csv(data_path)  # 读取文件
+    book_data = pd.read_csv(org_data_path)  # 读取文件
     # ,sep=",",error_bad_lines=False,engine='python',encoding='utf-8'
     # print(book_data.head())  # 2822 rows x 5 columns
 

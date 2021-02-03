@@ -1,5 +1,5 @@
 # coding:utf-8
-# 此处为原始数据处理，第一种处理方式，将抓到的微博热搜数据每天每条热搜选取一条微博，存到data目录下的data.csv中
+# 此处为原始数据处理，第一种处理方式，将抓到的微博热搜数据txt_path中每天每条热搜选取一条微博，存到csv_path中
 # 默认使用了这种方式，其他两种方式参见org_data_process_2、org_data_process_3
 
 import datetime
@@ -11,7 +11,7 @@ end_day = '2021-01-30'
 
 title_path = './HotData/HotTitle/{day}HotTitle.txt'
 txt_path = './HotData/HotContent/{day}HotContent.txt'
-csv_path = './data/data.csv'
+csv_path = './data/[1]org_data.csv'
 with open(csv_path, 'w+', -1) as c_f:  # a+为追加写入，w+为覆盖写入
     c_f.write('content\n')
 start_date = datetime.datetime.strptime(start_day, '%Y-%m-%d')
